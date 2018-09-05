@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    include head.pug
+  body
+    include navbar.pug
+    .container-fluid.text-center
+      .row.content
+        include sidenav.pug
+        .col-sm-8.text-left
+          block content
+        include sidenavright.pug
+    include footer.pug
+    include scripts.pug

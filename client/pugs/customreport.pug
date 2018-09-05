@@ -1,0 +1,19 @@
+extends layout.pug
+block content
+  h1 Create Custom Report
+  p
+    b #{msg}
+  hr
+  form.form-horizontal
+    .form-group
+      label.control-label.col-sm-2(for='dateFrom') Date From:
+      .col-sm-4
+        input.form-control#dateFrom(type='date', name='dateFrom', placeholder='Date From')
+    .form-group
+      label.control-label.col-sm-2(for='dateTo') Date To:
+      .col-sm-4
+        input.form-control#dateTo(type='date', name='dateTo', placeholder='Date To')
+
+    .form-group
+      .col-sm-offset-2.col-sm-6
+        button.btn.btn-default#generateCustomReport(type='button') Generate Report

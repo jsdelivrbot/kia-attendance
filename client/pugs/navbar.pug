@@ -1,0 +1,31 @@
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type="button" data-toggle="collapse" data-target="#myNavbar")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="/") Kia Attendance
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href="/") Home
+        li
+          a(href="/statistics") Statistics
+        li
+          a(href="/about") About
+        li
+          a(href="/contact") Contact Us
+      ul.nav.navbar-nav.navbar-right
+        unless user
+          li
+            a(href="/login")
+              span.glyphicon.glyphicon-log-in
+              |  Login
+        if user
+          li
+            a(href="/settings") Hello, #{user.name}
+          li
+            a(href="/auth/logout")
+              span.glyphicon.glyphicon-log-in
+              |  logout

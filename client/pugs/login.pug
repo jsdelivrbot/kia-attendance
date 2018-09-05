@@ -1,0 +1,19 @@
+extends layout.pug
+block content
+  h1 Login
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  form.form-horizontal(action='/auth/local', method='post')
+    .form-group
+      label.control-label.col-sm-2(for='email') Email:
+      .col-sm-10
+        input.form-control#email(type='email', name='email', placeholder='Enter email')
+    .form-group
+      label.control-label.col-sm-2(for='password') Password:
+      .col-sm-10
+        input.form-control#password(type='password', name='password', placeholder='Enter password')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit

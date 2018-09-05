@@ -1,0 +1,44 @@
+extends layout.pug
+block content
+  h1 Welcome to Kia Attendance Reporting
+  p
+    | Kia Attendance Reporting system is intended to provide the statistics.
+  include header.pug
+  h2 Upload CSV File
+  form.form-horizontal(action='/uploadFile', method='post' encType="multipart/form-data")
+    .form-group
+      label.control-label.col-sm-2(for='file') Upload File:
+      .col-sm-10
+        input.form-control#file(type='file', name='file', placeholder='Enter name')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit
+  hr
+  h2 Records
+  .table-responsive
+    table#index-table.table.table-striped
+      thead
+        tr
+          th Date
+          th Name
+          th Department
+          th Clock In
+          th Clock In Status
+
+
+      tbody
+        each val, index in attendance
+          tr
+            td= val.date.toLocaleDateString()
+            td= val.employeeName
+            td= val.department
+            td= val.clockIn
+            td= val.clockInStatus
+
+      tfoot
+        tr
+          th Date
+          th Name
+          th Department
+          th Clock In 
+          th Clock In Status

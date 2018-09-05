@@ -1,0 +1,20 @@
+extends layout.pug
+block content
+  h1 Create New Grade
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  form.form-horizontal(action='/api/grade/', method='post')
+    .form-group
+      label.control-label.col-sm-2(for='gardeId') Grade ID:
+      .col-sm-10
+        input.form-control#gradeId(type='ID', name='gradeId', placeholder='Enter Grade ID')
+    .form-group
+      label.control-label.col-sm-2(for='gradeName') grade Name:
+      .col-sm-10
+        input.form-control#gradeName(type='name', name='gradeName', placeholder='Enter Grade Name')
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit

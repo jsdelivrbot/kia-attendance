@@ -1,0 +1,28 @@
+extends layout.pug
+block content
+  h1 Create New Attendence Policy
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  form.form-horizontal(action='/api/attendencepolicy/', method='post')
+    .form-group
+      label.control-label.col-sm-2(for='attendencepolicyId') Attendencepolicy ID:
+      .col-sm-10
+        input.form-control#attendencepolicyId(type='attendencepolicyId', name='attendencepolicyId', placeholder='type')
+    .form-group
+      label.control-label.col-sm-2(for='attendencepolicyDescription') Attendencepolicy Description:
+      .col-sm-10
+        input.form-control#attendencepolicyDescription(type='attendencepolicyDescription', name='attendencepolicyDescription', placeholder='type')
+    .form-group
+      label.control-label.col-sm-2(for='timeFrom') Time From:
+      .col-sm-10
+        input.form-control#timeFrom(type='timeFrom', name='timeFrom', placeholder='Time From')
+    .form-group
+      label.control-label.col-sm-2(for='timeTo') Time To:
+      .col-sm-10
+        input.form-control#timeTo(type='timeTo', name='timeTo', placeholder='Time To')
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit

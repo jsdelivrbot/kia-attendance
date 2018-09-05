@@ -1,0 +1,27 @@
+extends layout.pug
+block content
+  h1 Create New Account
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  form.form-horizontal(action='/api/users/', method='post')
+    .form-group
+      label.control-label.col-sm-2(for='name') Name:
+      .col-sm-10
+        input.form-control#name(type='name', name='name', placeholder='Enter name')
+    .form-group
+      label.control-label.col-sm-2(for='email') Email:
+      .col-sm-10
+        input.form-control#email(type='email', name='email', placeholder='Enter email')
+    .form-group
+      label.control-label.col-sm-2(for='password') Password:
+      .col-sm-10
+        input.form-control#password(type='password', name='password', placeholder='Enter password')
+    .form-group
+      label.control-label.col-sm-2(for='superpass') Super Password:
+      .col-sm-10
+        input.form-control#superpass(type='password', name='superpass', placeholder='Enter super password')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit

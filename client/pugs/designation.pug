@@ -1,0 +1,20 @@
+extends layout.pug
+block content
+  h1 Create New Designation
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  form.form-horizontal(action='/api/designation/', method='post')
+    .form-group
+      label.control-label.col-sm-2(for='designationID') Designation ID:
+      .col-sm-10
+        input.form-control#designationid(type='ID', name='designationID', placeholder='Enter Designation ID')
+    .form-group
+      label.control-label.col-sm-2(for='designationname') Designation Name:
+      .col-sm-10
+        input.form-control#designationname(type='name', name='designationname', placeholder='Enter Designation Name')
+    
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Submit

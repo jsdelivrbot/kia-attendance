@@ -1,0 +1,85 @@
+{
+  "name": "kia-employee-attendance",
+  "version": "1.0.0",
+  "description": "Kia Employee Attendance Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env DEBUG=kia:* NODE_ENV=development nodemon server/app.js",
+    "start:prod": "cross-env NODE_ENV=production node server/app.js",
+    "debug": "cross-env DEBUG=express:router:route,express:application,kia:* NODE_ENV=development nodemon --trace-sync-io server/app.js",
+    "lint": "echo 'Pre-commit checks...' && standard --fix && echo \"No code style errors found.\"",
+    "test": "echo \"Code tests are under construction by Saba\" && exit 0",
+    "bash:deploy": "sh server_script",
+    "concurrently-use": "use concurrently echo 'https://scotch.io/tutorials/using-npm-as-a-build-tool'"
+  },
+  "author": "Saba Channa",
+  "license": "MIT",
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "bitbucket url goes here"
+  },
+  "keywords": [
+    "attendance",
+    "kia"
+  ],
+  "dependencies": {
+    "babelify": "^7.2.0",
+    "body-parser": "^1.17.2",
+    "build-url": "^1.1.1",
+    "composable-middleware": "^0.3.0",
+    "compression": "^1.7.0",
+    "connect-multiparty": "^2.0.0",
+    "cookie-parser": "^1.4.3",
+    "csv-parser": "^1.12.1",
+    "csvtojson": "^2.0.6",
+    "debug": "^2.6.8",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.3",
+    "express-fileupload": "^0.4.0",
+    "express-jwt": "^5.3.0",
+    "express-validator": "^5.2.0",
+    "formidable": "^1.2.1",
+    "helmet": "^3.6.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonwebtoken": "^7.4.1",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.9",
+    "moment": "^2.19.1",
+    "mongoose": "^4.11.4",
+    "mongoose-timestamp": "^0.6.0",
+    "moniker": "^0.1.2",
+    "morgan": "^1.8.2",
+    "needle": "^1.6.0",
+    "passport": "~0.2.0",
+    "passport-local": "latest",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.4.3",
+    "winston": "^2.3.1",
+    "winston-papertrail": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "body-parser": "^1.17.2",
+    "cross-env": "^5.0.1",
+    "nodemon": "^1.11.0",
+    "pre-commit": "^1.2.2",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "ignore": [
+      "client/public"
+    ],
+    "parser": "babel-eslint"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*",
+      "documentation/*"
+    ],
+    "delay": "1000"
+  }
+}

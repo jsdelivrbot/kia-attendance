@@ -1,0 +1,53 @@
+meta(charset="utf-8")
+title
+  | Kia Attendance - #{pageTitle}
+meta(name="title" content="Kia " + pageTitle)
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+link(href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css")
+link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css")
+
+link(href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel="stylesheet" type="text/css")
+style.
+  /* Remove the navbar's default margin-bottom and rounded borders */
+  .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  }
+
+  .m-b {
+    margin-bottom:15px;
+  }
+
+  .m-l {
+    margin-left: 15px;
+  }
+
+  .m-l-xl {
+    margin-left: 50px;
+  }
+
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 1200px}
+  /* Set gray background color and 100% height */
+  .sidenav {
+  padding-top: 20px;
+  /* background-color: #f1f1f1; */
+  background: #f1f1f1;
+  background: linear-gradient(#f1f1f1, #ffffff);
+  height: 100%;
+  }
+  /* Set black background color, white text and some padding */
+  footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  }
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+  .sidenav {
+  height: auto;
+  padding: 15px;
+  }
+  .row.content {height:auto;}
+  }

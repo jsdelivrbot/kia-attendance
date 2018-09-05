@@ -1,0 +1,117 @@
+extends layout.pug
+block content
+  h1 Create New Employee
+  p
+    b #{msg}
+  hr
+  h2 Fill the form
+  unless employee
+    form.form-horizontal(action='/api/employee/', method='post')
+      .form-group
+        label.control-label.col-sm-2(for='employeeId') Employee ID:
+        .col-sm-10
+          input.form-control#employeeId(type='ID', name='employeeID', placeholder='Enter Employee ID')
+      .form-group
+        label.control-label.col-sm-2(for='name') Employee Name:
+        .col-sm-10
+          input.form-control#name(type='name', name='employeeName', placeholder='Enter Employee Name')
+      .form-group
+        label.control-label.col-sm-2(for='departmentName') Department Name:
+        .col-sm-10
+          select#departmentname.select.form-control.input-lg(name='departmentID')
+            each val in departments
+              option(value=val.departmentID)= val.departmentName
+      .form-group
+        label.control-label.col-sm-2(for='designationId') Designation:
+        .col-sm-10
+          select#designationname.select.form-control.input-lg(name='designationId')
+            each val in designations
+              option(value=val.designationId)= val.designationName
+      .form-group
+        label.control-label.col-sm-2(for='locationId') Location:
+        .col-sm-10
+          select#locationName.select.form-control.input-lg(name='locationId')
+            each val in locations
+              option(value=val.locationId)= val.locationName
+      .form-group
+        label.control-label.col-sm-2(for='gradeId') Grade:
+        .col-sm-10
+          select#gradeName.select.form-control.input-lg(name='gradeId')
+            each val in grades
+              option(value=val.gradeId)= val.gradeName
+      .form-group
+        label.control-label.col-sm-2(for='dateOfJoining') dateOfJoining:
+        .col-sm-10
+          input.form-control#dateOfJoining(type='date', name='dateOfJoining', placeholder='Date of Joining')
+      .form-group
+        label.control-label.col-sm-2(for='employeestatus') Employee Status:
+        .col-sm-10
+          input.form-control#status(type='name', name='employeeStatus', placeholder='Employee Status')
+      .form-group
+        label.control-label.col-sm-2(for='TmachineID') Time Machine ID:
+        .col-sm-10
+          input.form-control#TmachineID(type='name', name='TmachineID', placeholder='Time Machine ID')
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Submit
+  if employee
+    form.form-horizontal(action='/api/employee/update', method='post')
+      .form-group
+        label.control-label.col-sm-2(for='employeeId') Employee ID:
+        .col-sm-10
+          input.form-control#employeeId(type='ID', name='employeeID', value=employee.employeeId, placeholder='Enter Employee ID')
+      .form-group
+        label.control-label.col-sm-2(for='name') Employee Name:
+        .col-sm-10
+          input.form-control#name(type='name', name='employeeName', value=employee.employeeName, placeholder='Enter Employee Name')
+      .form-group
+        label.control-label.col-sm-2(for='departmentName') Department Name:
+        .col-sm-10
+          select#departmentname.select.form-control.input-lg(name='departmentID', value=employee.departmentID)
+            each val in departments
+              if val.departmentID === employee.departmentID
+                option(value=val.departmentID selected)= val.departmentName
+              else
+                option(value=val.departmentID)= val.departmentName
+      .form-group
+        label.control-label.col-sm-2(for='designationId') Designation:
+        .col-sm-10
+          select#designationname.select.form-control.input-lg(name='designationId', value=employee.designationId)
+            each val in designations
+              if val.designationId === employee.designationId
+                option(value=val.designationId selected)= val.designationName
+              else
+                option(value=val.designationId)= val.designationName
+      .form-group
+        label.control-label.col-sm-2(for='locationId') Location:
+        .col-sm-10
+          select#locationName.select.form-control.input-lg(name='locationId', value=employee.locationId)
+            each val in locations
+              if val.locationId === employee.locationId
+                option(value=val.locationId selected)= val.locationName
+              else
+                option(value=val.locationId)= val.locationName
+      .form-group
+        label.control-label.col-sm-2(for='gradeId') Grade:
+        .col-sm-10
+          select#gradeName.select.form-control.input-lg(name='gradeId', value=employee.gradeId)
+            each val in grades
+              if val.gradeId === employee.gradeId
+                option(value=val.gradeId selected)= val.gradeName
+              else
+                option(value=val.gradeId)= val.gradeName
+      .form-group
+        label.control-label.col-sm-2(for='dateOfJoining') dateOfJoining:
+        .col-sm-10
+          input.form-control#dateOfJoining(type='date', name='dateOfJoining', placeholder='Date of Joining', value=employee.dateOfJoiningModified)
+      .form-group
+        label.control-label.col-sm-2(for='employeestatus') Employee Status:
+        .col-sm-10
+          input.form-control#status(type='name', name='employeeStatus', placeholder='Employee Status', value=employee.empStatus)
+      .form-group
+        label.control-label.col-sm-2(for='TmachineID') Time Machine ID:
+        .col-sm-10
+          input.form-control#TmachineID(type='name', name='TmachineID', placeholder='Time Machine ID', value=employee.TmachineID)
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Submit
